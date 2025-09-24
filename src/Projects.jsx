@@ -25,77 +25,75 @@ const projects = [
 
 const Projects = () => {
   return (
-    <section className="py-12 bg-gray-50">
-      {/* Heading */}
-      <div className="text-center mb-8">
-        <span className="px-4 py-1 bg-[#F5801E]/10 text-[#F5801E] font-semibold rounded-full text-sm">
-          Portfolio Showcase
-        </span>
-        <h2 className="text-3xl font-bold mt-3">
-          Featured{" "}
-          <span className="bg-gradient-to-r from-[#F5801E] to-[#f8b878] bg-clip-text text-transparent">
-            Projects
-          </span>
-        </h2>
-        <p className="text-gray-600 mt-2 max-w-2xl mx-auto">
-          A glimpse of our finest construction achievements and architectural excellence
-        </p>
-      </div>
+   <section className="py-12 bg-gray-50">
+  {/* Heading */}
+  <div className="text-center mb-8">
+    <span className="px-4 py-1 bg-[#F5801E]/10 text-[#F5801E] font-semibold rounded-full text-sm">
+      Portfolio Showcase
+    </span>
+    <h2 className="text-3xl font-bold mt-3">
+      Featured{" "}
+      <span className="bg-gradient-to-r from-[#F5801E] to-[#f8b878] bg-clip-text text-transparent">
+        Projects
+      </span>
+    </h2>
+    <p className="text-gray-600 mt-2 max-w-2xl mx-auto">
+      A glimpse of our finest construction achievements and architectural excellence
+    </p>
+  </div>
 
-      {/* Swiper Slider */}
-      <Swiper
-        modules={[Pagination, Autoplay]}
-        pagination={{ clickable: true }}
-        autoplay={{
-          delay: 4000, // 4 seconds
-          disableOnInteraction: false,
-        }}
-        loop={true}
-        spaceBetween={30}
-        slidesPerView={1}
-        className="px-4 sm:px-6 md:px-8"
-      >
-        {projects.map((project) => (
-          <SwiperSlide key={project.id}>
-            <div className="flex justify-center">
-              <div className="relative w-full max-w-[900px] h-[250px] sm:h-[350px] md:h-[450px] rounded-2xl overflow-hidden shadow-lg">
-                <img
-                  src={project.image}
-                  alt={project.name}
-                  className="w-full h-full object-cover"
-                />
+  {/* Swiper Slider */}
+  <Swiper
+    modules={[Pagination, Autoplay]}
+    pagination={{ clickable: true }}
+    autoplay={{
+      delay: 4000,
+      disableOnInteraction: false,
+    }}
+    loop={true}
+    spaceBetween={20}
+    slidesPerView={1}
+    className="px-4 sm:px-6 md:px-8"
+  >
+    {projects.map((project) => (
+      <SwiperSlide key={project.id}>
+        <div className="flex justify-center">
+          <div className="relative w-full max-w-[900px] h-[250px] sm:h-[350px] md:h-[450px] rounded-2xl overflow-hidden shadow-lg mx-4">
+            <img
+              src={project.image}
+              alt={project.name}
+              className="w-full h-full object-cover"
+            />
 
-                {/* Overlay */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent"></div>
+            {/* Overlay */}
+            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent"></div>
 
-                {/* Content */}
-                <div className="absolute bottom-6 left-6 right-6 text-white">
-                  {/* Category Badge */}
-                  <span className="px-3 py-1 bg-[#F5801E] rounded-full text-sm font-medium mb-3 inline-block">
-                    {project.category}
-                  </span>
+            {/* Content */}
+            <div className="absolute bottom-6 left-6 right-6 text-white">
+              {/* Removed Category Badge */}
 
-                  {/* Title & Desc */}
-                  <h3 className="text-lg sm:text-xl md:text-2xl font-bold mb-2">
-                    {project.name}
-                  </h3>
-                  <p className="text-xs sm:text-sm md:text-base text-gray-200 mb-4">
-                    {project.desc}
-                  </p>
+              {/* Title & Desc */}
+              <h3 className="text-lg sm:text-xl md:text-2xl font-bold mb-2">
+                {project.name}
+              </h3>
+              <p className="text-xs sm:text-sm md:text-base text-gray-200 mb-4">
+                {project.desc}
+              </p>
 
-                  {/* Buttons */}
-                  <div className="flex gap-3">
-                    <button className="px-4 py-2 bg-white text-gray-900 font-semibold rounded-lg shadow hover:bg-gray-200 transition">
-                      View All Projects
-                    </button>
-                  </div>
-                </div>
+              {/* Buttons */}
+              <div className="flex gap-3">
+                <button className="px-3 py-1.5 text-sm sm:px-4 sm:py-2 sm:text-base bg-white text-gray-900 font-semibold rounded-lg shadow hover:bg-gray-200 transition">
+  View All Projects
+</button>
               </div>
             </div>
-          </SwiperSlide>
-        ))}
-      </Swiper>
-    </section>
+          </div>
+        </div>
+      </SwiperSlide>
+    ))}
+  </Swiper>
+</section>
+
   );
 };
 

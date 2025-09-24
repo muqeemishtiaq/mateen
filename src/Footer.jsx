@@ -1,6 +1,6 @@
 import React from "react";
 import { Mail, MapPin, User } from "lucide-react";
-
+import { Link } from "react-router";
 const Footer = () => {
   return (
     <footer className="bg-[#F5801E] text-white py-12">
@@ -20,11 +20,30 @@ const Footer = () => {
           <div>
             <h3 className="text-xl font-semibold mb-4">Services</h3>
             <ul className="space-y-2 text-white/90">
-              <li>Civil Contractor</li>
-              <li>Electrical Contractor</li>
-              <li>Mechanical Contractor</li>
-              <li>LPG Contractor</li>
-              
+                  <Link
+    to="/civil"
+    className="block px-6 py-2 hover:bg-gray-200 hover:text-[#F5801E]"
+  >
+    Civil Contractor
+  </Link>
+  <Link
+    to="/electrical"
+    className="block px-6 py-2 hover:bg-gray-200 hover:text-[#F5801E]"
+  >
+    Electrical Contractor
+  </Link>
+  <Link
+    to="/mechanical"
+    className="block px-6 py-2 hover:bg-gray-200 hover:text-[#F5801E]"
+  >
+    Mechanical Contractor
+  </Link>
+  <Link
+    to="/lpg"
+    className="block px-6 py-2 hover:bg-gray-200 hover:text-[#F5801E]"
+  >
+    LPG Contractor
+  </Link>
             </ul>
           </div>
 

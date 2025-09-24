@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-
+ import { Link } from "react-router";
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [servicesOpen, setServicesOpen] = useState(false); // mobile dropdown
@@ -38,8 +38,8 @@ const Navbar = () => {
 
             {/* Desktop Menu */}
             <div className="hidden md:flex space-x-6 items-center font-medium">
-              <a href="#" className="hover:text-[#F5801E]">Home</a>
-              <a href="#" className="hover:text-[#F5801E]">About</a>
+              <Link to="/" className="hover:text-[#F5801E]">Home</Link>
+              <Link to="/about" className="hover:text-[#F5801E]">About</Link>
 
               {/* Services (hover on desktop) */}
               <div className="relative group">
@@ -56,15 +56,35 @@ const Navbar = () => {
                 </button>
                 {/* Dropdown on hover */}
                 <div className="absolute left-0 bg-white text-black shadow-lg mt-2 rounded-lg w-48 hidden group-hover:block">
-                  <a href="#" className="block px-4 py-2 hover:bg-gray-100 hover:text-[#F5801E]">Civil Contractor</a>
-                  <a href="#" className="block px-4 py-2 hover:bg-gray-100 hover:text-[#F5801E]">Electrical Contractor</a>
-                  <a href="#" className="block px-4 py-2 hover:bg-gray-100 hover:text-[#F5801E]">Mechanical Contractor</a>
-                  <a href="#" className="block px-4 py-2 hover:bg-gray-100 hover:text-[#F5801E]">LPG Contractor</a>
+                  <Link
+    to="/civil"
+    className="block px-6 py-2 hover:bg-gray-200 hover:text-[#F5801E]"
+  >
+    Civil Contractor
+  </Link>
+  <Link
+    to="/electrical"
+    className="block px-6 py-2 hover:bg-gray-200 hover:text-[#F5801E]"
+  >
+    Electrical Contractor
+  </Link>
+  <Link
+    to="/mechanical"
+    className="block px-6 py-2 hover:bg-gray-200 hover:text-[#F5801E]"
+  >
+    Mechanical Contractor
+  </Link>
+  <Link
+    to="/lpg"
+    className="block px-6 py-2 hover:bg-gray-200 hover:text-[#F5801E]"
+  >
+    LPG Contractor
+  </Link>
                 </div>
               </div>
 
-              <a href="#" className="hover:text-[#F5801E]">Products</a>
-              <a href="#" className="hover:text-[#F5801E]">Contact</a>
+              <Link to="/products" className="hover:text-[#F5801E]">Products</Link>
+               <Link to="/contact" className="hover:text-[#F5801E]">Contact</Link>
             </div>
 
             {/* Mobile menu button */}
@@ -110,12 +130,35 @@ const Navbar = () => {
                 </svg>
               </button>
               {servicesOpen && (
-                <div className="bg-gray-50 animate-fadeIn">
-                  <a href="#" className="block px-6 py-2 hover:bg-gray-200 hover:text-[#F5801E]">Civil Contractor</a>
-                  <a href="#" className="block px-6 py-2 hover:bg-gray-200 hover:text-[#F5801E]">Electrical Contractor</a>
-                  <a href="#" className="block px-6 py-2 hover:bg-gray-200 hover:text-[#F5801E]">Mechanical Contractor</a>
-                  <a href="#" className="block px-6 py-2 hover:bg-gray-200 hover:text-[#F5801E]">LPG Contractor</a>
-                </div>
+               
+
+<div className="bg-gray-50 animate-fadeIn">
+  <Link
+    to="/civil"
+    className="block px-6 py-2 hover:bg-gray-200 hover:text-[#F5801E]"
+  >
+    Civil Contractor
+  </Link>
+  <Link
+    to="/electrical"
+    className="block px-6 py-2 hover:bg-gray-200 hover:text-[#F5801E]"
+  >
+    Electrical Contractor
+  </Link>
+  <Link
+    to="/mechanical"
+    className="block px-6 py-2 hover:bg-gray-200 hover:text-[#F5801E]"
+  >
+    Mechanical Contractor
+  </Link>
+  <Link
+    to="/lpg"
+    className="block px-6 py-2 hover:bg-gray-200 hover:text-[#F5801E]"
+  >
+    LPG Contractor
+  </Link>
+</div>
+
               )}
             </div>
 

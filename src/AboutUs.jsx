@@ -91,10 +91,11 @@ const AboutUs = () => {
             </p>
           </div>
 
-          <div
-            className="bg-white/10 rounded-xl p-6 h-[250px] flex flex-col border border-white"
-            data-aos="fade-left"
-          >
+         <div
+  className="bg-white/10 rounded-xl p-6 h-auto md:h-[250px] flex flex-col border border-white"
+  data-aos="fade-left"
+>
+
             <h3 className="text-xl font-semibold mb-4">Key Highlights</h3>
             <ul className="space-y-3 text-white/90 flex-1">
               <li className="flex items-start">

@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import { HardHat, Zap, Cog, Flame } from "lucide-react"; // service icons
+import { Link } from "react-router-dom"; // ✅ import Link
 import AOS from "aos";
 import "aos/dist/aos.css";
 
@@ -43,7 +44,8 @@ const Services = () => {
       {/* Services Grid */}
       <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
         {/* Civil Contractor */}
-        <div
+        <Link
+          to="/civil"
           className="rounded-lg relative overflow-hidden border-0 shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-3 bg-white h-full group"
           data-aos="zoom-in-up"
         >
@@ -56,10 +58,11 @@ const Services = () => {
             </h3>
             <p className="text-sm text-gray-600 mt-2">Strong & Reliable Builds</p>
           </div>
-        </div>
+        </Link>
 
         {/* Electrical Contractor */}
-        <div
+        <Link
+          to="/electrical"
           className="rounded-lg relative overflow-hidden border-0 shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-3 bg-white h-full group"
           data-aos="zoom-in-up"
           data-aos-delay="200"
@@ -73,10 +76,11 @@ const Services = () => {
             </h3>
             <p className="text-sm text-gray-600 mt-2">Power & Innovation</p>
           </div>
-        </div>
+        </Link>
 
         {/* Mechanical Contractor */}
-        <div
+        <Link
+          to="/mechanical"
           className="rounded-lg relative overflow-hidden border-0 shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-3 bg-white h-full group"
           data-aos="zoom-in-up"
           data-aos-delay="400"
@@ -90,10 +94,11 @@ const Services = () => {
             </h3>
             <p className="text-sm text-gray-600 mt-2">Precision & Quality</p>
           </div>
-        </div>
+        </Link>
 
         {/* LPG Contractor */}
-        <div
+        <Link
+          to="/lpg"
           className="rounded-lg relative overflow-hidden border-0 shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-3 bg-white h-full group"
           data-aos="zoom-in-up"
           data-aos-delay="600"
@@ -107,7 +112,7 @@ const Services = () => {
             </h3>
             <p className="text-sm text-gray-600 mt-2">Safe & Efficient</p>
           </div>
-        </div>
+        </Link>
       </div>
     </section>
   );

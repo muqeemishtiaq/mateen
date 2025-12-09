@@ -5,37 +5,39 @@ pipeline {
         IMAGE_NAME = 'almateen-image'
         EMAIL = 'muqeemishtiaq1234@gmail.com'
         PORT = '3000'
-
     }
     stages {
         stage('Clone Repo') {
             steps {
-                git branch : 'main', url: 'https://github.com/muqeemishtiaq/mateen.git'
+                git branch: 'main', url: 'https://github.com/muqeemishtiaq/mateen.git'
             }
         }
 
         stage('Build Docker Image') {
             steps {
-                sh '''
+                sh """
                 docker build -t ${IMAGE_NAME} .
-                '''
+                """
             }
         }
-       stage('Stop and Remove Existing Container') {
+
+        stage('Stop and Remove Existing Container') {
             steps {
-                sh '''
-                'docker stop ${CONTAINER_NAME}' || true
+                sh """
+                docker stop ${CONTAINER_NAME} || true
                 docker rm ${CONTAINER_NAME} || true
-                '''
+                """
             }
         }
-         stage('Run Docker Container') {
+
+        stage('Run Docker Container') {
             steps {
-                sh '''
-                'docker run -d -p ${PORT}:${PORT} --name $CONTAINER_NAME $IMAGE_NAME'
-                '''
+                sh """
+                docker run -d -p ${PORT}:${PORT} --name ${CONTAINER_NAME} ${IMAGE_NAME}
+                """
             }
         }
+
         stage('Send Notification Email') {
             steps {
                 emailext (
@@ -46,5 +48,4 @@ pipeline {
             }
         }
     }
-
 }

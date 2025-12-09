@@ -13,6 +13,14 @@ pipeline {
                 git branch : 'main', url: 'https://github.com/muqeemishtiaq/mateen.git'
             }
         }
+
+        stage('Build Docker Image') {
+            steps {
+                sh '''
+                docker build -t ${IMAGE_NAME} .
+                '''
+            }
+        }
        stage('Stop and Remove Existing Container') {
             steps {
                 sh '''
